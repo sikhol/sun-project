@@ -2,6 +2,7 @@ body{
 	margin: 0px;
 }
 #header{
+
 	background-image: url('../images/header.jpg');
 	background-repeat: no-repeat;
 	background-position: center;
@@ -308,4 +309,24 @@ margin-top:30px;
 .form-text{
 margin-top:60px;
 }
+}
+.filter-button{
+	font-size: 18px;
+	padding:5px 15px;
+	text-align: center;
+	color: #555;
+	border-radius: 40px;
+	margin-bottom: 30px;
+	background:#fff;
+	border:none;
+	margin-right: 5px;
+	margin-left: 5px;
+	box-shadow: 0 2px 5px 2px rgba(0,0,0,.15);
+}
+.filter-button:hover,
+.filter-button:focus,
+.filter-button.active{
+	color: #ffffff;
+	background-color:#555;
+	outline:none;
 }

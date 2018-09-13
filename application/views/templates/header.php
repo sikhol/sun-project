@@ -283,6 +283,9 @@
                         <li>
                             <a href="<?php echo base_url ("admin/index");?>"><i class="glyphicon glyphicon-home"></i> Dashboard</a>
                         </li>
+                        <li>
+                            <a href="<?php echo base_url("admin/about");?>"><i class=""></i> about</a>
+                        </li>
 
 
                         <li>
@@ -291,6 +294,10 @@
                         <li>
                             <a href="<?php echo base_url("admin/kontak");?>"><i class="glyphicon glyphicon-envelope"></i> Kontak</a>
                         </li>
+                        <li>
+                            <a href="<?php echo base_url("admin/image");?>"><i class=""></i> Image Header</a>
+                        </li>
+
 
 
 

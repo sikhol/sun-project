@@ -1,0 +1,54 @@
+
+
+
+<!--                                                      Credit By:                                                  -->
+<!--        __________________________________________________________________________________________________        -->
+<!--            ==     == == =   ==     ==     ==   ==  ==   ==   ===   ===      ==      ===  ==     == == =          -->
+<!--          ==  ==   ==    ==  ==     ==     ==   ==  ==  ==   == == == ==   ==  ==   == == ==     ==    ==         -->
+<!--         ==    ==  == == =   ==     ==     ==   ==  == ==    == == == ==  ==    ==  == == ==     == == =          -->
+<!--         == == ==  ==  ==    ==     ==     ==   ==  ==  ==   == == == ==  == == ==  == == ==     ==               -->
+<!--         ==    ==  ==    ==  ==     == ==    ===    ==   ==  ==  ===  ==  ==    ==  ==  ===      ==               -->
+<!--        __________________________________________________________________________________________________        -->
+
+
+
+
+
+
+
+
+
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 70 70">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fb4f4f;
+      }
+
+      .cls-2 {
+        fill: #fff;
+        fill-rule: evenodd;
+      }
+
+      .cls-3 {
+        filter: url(#Ellipse_41);
+      }
+    </style>
+    <filter id="Ellipse_41" x="0" y="0" width="70" height="70" filterUnits="userSpaceOnUse">
+      <feOffset dy="2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="g_" data-name="g+" transform="translate(7.5 5.5)">
+    <g class="cls-3" transform="matrix(1, 0, 0, 1, -7.5, -5.5)">
+      <circle id="Ellipse_41-2" data-name="Ellipse 41" class="cls-1" cx="27.5" cy="27.5" r="27.5" transform="translate(7.5 5.5)"/>
+    </g>
+    <g id="g_2" data-name="g+" transform="translate(-61.357 -426.357)">
+      <path id="Path_51" data-name="Path 51" class="cls-2" d="M19,5.225V7.006H17.219V8.787H15.438v-1.9H13.656V5.225h1.781V3.444h1.781V5.225Zm-12.944,0h5.7c0,.356.119.594.119.95a5.579,5.579,0,0,1-5.819,5.938A6.056,6.056,0,1,1,6.056,0a5.864,5.864,0,0,1,4.038,1.544L8.431,3.206a3.166,3.166,0,0,0-2.375-.95,3.826,3.826,0,0,0-3.8,3.8,3.751,3.751,0,0,0,3.8,3.8A3.235,3.235,0,0,0,9.5,7.244H6.056Z" transform="translate(80 448)"/>
+    </g>
+  </g>
+</svg>

@@ -8,7 +8,7 @@ class Batik_model extends CI_Model{
 
 	function data($number,$offset){
 		$output='';
-		$batik = $this->db->get('produk',$number,$offset)->result_array();
+		$batik = $this->db->order_by('id','desc')->get('produk',$number,$offset)->result_array();
 		$i=0; $scp = base_url("assets/js/ninja-slider.js");
 		foreach ($batik as $u ) {
 			$src = base_url()."assets/img/uploads/".$u['gambar'];
@@ -39,12 +39,15 @@ class Batik_model extends CI_Model{
 		foreach ($batik as $slide) {
 			$src = base_url()."assets/img/uploads/".$slide['gambar'];
 			$nm = $slide['nama_product'];
+			$hrga = $slide['harga'];
 			$des = $slide['deskripsi'];
 			$output .='
                 <li>
                     <a class="ns-img" href="'; $output .= $src; $output .='"></a>
                     <div class="caption">
+
                         <h3>'; $output .= $nm; $output.='</h3>
+												<h4>'; $output .= $hrga; $output.='<h4>
                         <p>'; $output .= $des; $output.='</p>
                     </div>
                 </li>
@@ -58,10 +61,17 @@ class Batik_model extends CI_Model{
 		return $output;
 	}
 
-	public function get_batik(){
-		$query=$this->db->get('produk');
+	public function get_batik($table){
+		if($table == 'produk'){
+		$this->db->order_by('tgl_produk', 'DESC');
+	}
+		$query=$this->db->get($table);
 		return $query->result_array();
 	}
+	// public function get_about(){
+	// 	$query=$this->db->get('ongkir');
+	// 	return $query->result_array();
+	// }
 
 	public function get_counter(){
 		$query=$this->db->get('data');
@@ -73,16 +83,18 @@ class Batik_model extends CI_Model{
 	}
 
 	public function jum_batik() {
+
 		return $this->db->get('produk')->num_rows();
 	}
 	public function get_frontend(){
+		$this->db->order_by('tgl_masuk', 'DESC');
     $query=$this->db->get('kontak');
     return $query->result_array();
   }
 
-  public function insert($data)
+  public function insert($data,$table)
   {
-   $this->db->insert('produk', $data);
+   $this->db->insert($table, $data);
   }
 
   	public function counter() {
@@ -95,18 +107,30 @@ class Batik_model extends CI_Model{
   		}
 	}
 
-	public function get_batik_id($id){
-	 $query=$this->db->get_where('produk', array('id'=>$id));
+	public function get_batik_id($id,$table){
+	 $query=$this->db->get_where($table, array('id'=>$id));
+	 return $query->row_array();
+	}
+	public function get_ubah_id($id){
+	 $query=$this->db->get_where('head', array('id'=>$id));
 	 return $query->row_array();
 	}
 
-	public function update_batik($id, $data){
-		 $this->load->helper('url');
 
-		 $this->db->where('id',$id);
-		 return $this->db->update('produk', $data);
+	public function update($id, $data, $table){
+	 $this->load->helper('url');
 
-		}
+	 $this->db->where('id',$id);
+	 return $this->db->update($table, $data);
+
+	}
+	public function updategambar($id,$data){
+	 $this->load->helper('url');
+
+	 $this->db->where('id',$id);
+	 return $this->db->update('head', $data);
+
+	}
 
 	  public function set_batik(){
 	    $this->load->helper('url');

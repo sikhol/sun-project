@@ -1,0 +1,59 @@
+
+
+
+<!--                                                      Credit By:                                                  -->
+<!--        __________________________________________________________________________________________________        -->
+<!--            ==     == == =   ==     ==     ==   ==  ==   ==   ===   ===      ==      ===  ==     == == =          -->
+<!--          ==  ==   ==    ==  ==     ==     ==   ==  ==  ==   == == == ==   ==  ==   == == ==     ==    ==         -->
+<!--         ==    ==  == == =   ==     ==     ==   ==  == ==    == == == ==  ==    ==  == == ==     == == =          -->
+<!--         == == ==  ==  ==    ==     ==     ==   ==  ==  ==   == == == ==  == == ==  == == ==     ==               -->
+<!--         ==    ==  ==    ==  ==     == ==    ===    ==   ==  ==  ===  ==  ==    ==  ==  ===      ==               -->
+<!--        __________________________________________________________________________________________________        -->
+
+
+
+
+
+
+
+
+
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 70 70">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #5178d9;
+      }
+
+      .cls-2 {
+        fill: none;
+      }
+
+      .cls-3 {
+        fill: #fff;
+        fill-rule: evenodd;
+      }
+
+      .cls-4 {
+        filter: url(#Ellipse_43);
+      }
+    </style>
+    <filter id="Ellipse_43" x="0" y="0" width="70" height="70" filterUnits="userSpaceOnUse">
+      <feOffset dy="2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="facebook" transform="translate(7.5 5.5)">
+    <g class="cls-4" transform="matrix(1, 0, 0, 1, -7.5, -5.5)">
+      <circle id="Ellipse_43-2" data-name="Ellipse 43" class="cls-1" cx="27.5" cy="27.5" r="27.5" transform="translate(7.5 5.5)"/>
+    </g>
+    <g id="Symbol_18_1" data-name="Symbol 18 – 1" transform="translate(-1317.357 -824.357)">
+      <rect id="Rectangle_1458" data-name="Rectangle 1458" class="cls-2" width="16" height="16" transform="translate(1337 844)"/>
+      <path id="Path_1" data-name="Path 1" class="cls-3" d="M85.422,16V8.711h2.489l.356-2.844H85.422V4.089c0-.8.267-1.422,1.422-1.422h1.511V.089C88,.089,87.111,0,86.133,0a3.431,3.431,0,0,0-3.644,3.733V5.867H80V8.711h2.489V16Z" transform="translate(1261 844)"/>
+    </g>
+  </g>
+</svg>

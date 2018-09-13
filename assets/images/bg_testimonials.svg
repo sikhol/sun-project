@@ -1,0 +1,47 @@
+
+
+
+<!--                                                      Credit By:                                                  -->
+<!--        __________________________________________________________________________________________________        -->
+<!--            ==     == == =   ==     ==     ==   ==  ==   ==   ===   ===      ==      ===  ==     == == =          -->
+<!--          ==  ==   ==    ==  ==     ==     ==   ==  ==  ==   == == == ==   ==  ==   == == ==     ==    ==         -->
+<!--         ==    ==  == == =   ==     ==     ==   ==  == ==    == == == ==  ==    ==  == == ==     == == =          -->
+<!--         == == ==  ==  ==    ==     ==     ==   ==  ==  ==   == == == ==  == == ==  == == ==     ==               -->
+<!--         ==    ==  ==    ==  ==     == ==    ===    ==   ==  ==  ===  ==  ==    ==  ==  ===      ==               -->
+<!--        __________________________________________________________________________________________________        -->
+
+
+
+
+
+
+
+
+
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 1080">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clip-Testimonials);
+      }
+
+      .cls-2 {
+        fill: #8fa1ff;
+        font-size: 742px;
+        font-family: ArialMT, Arial;
+      }
+
+      .cls-3 {
+        fill: #fcfdfe;
+      }
+    </style>
+    <clipPath id="clip-Testimonials">
+      <rect width="1920" height="1080"/>
+    </clipPath>
+  </defs>
+  <g id="Testimonials" class="cls-1">
+    <rect class="cls-3" width="1920" height="1080"/>
+    <text id="_" data-name="”" class="cls-2" transform="translate(509 557.5) rotate(180)"><tspan x="0" y="672">”</tspan></text>
+  </g>
+</svg>

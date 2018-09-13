@@ -27,22 +27,22 @@
 
                                         <div class="form-group">
                                             <label>Nama Product</label>
-                                            <input class="form-control" name="nama">
+                                            <input class="form-control" name="nama" required>
                                             <p class="help-block">contoh : Batik Jawa.</p>
                                         </div>
                                         <div class="form-group">
                                             <label>Harga Product</label>
-                                            <input class="form-control" name="harga" placeholder="Rp.">
+                                            <input class="form-control" name="harga" placeholder="Rp." required>
                                             <p class="help-block">contoh :Rp. 50.000</p>
                                         </div>
 
                                         <div class="form-group">
                                             <label>Gambar Product</label>
-                                            <input type="file" name="foto">
+                                            <input type="file" name="foto" required>
                                         </div>
                                         <div class="form-group">
                                             <label>Deskripsi Product</label>
-                                            <textarea class="form-control" rows="3" name="deskripsi"></textarea>
+                                            <textarea class="form-control" rows="3" name="deskripsi" required></textarea>
                                         </div>
 
 

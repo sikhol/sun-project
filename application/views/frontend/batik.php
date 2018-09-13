@@ -10,31 +10,32 @@
 	<link href="<?php echo base_url('assets/css/style.css') ?>" rel="stylesheet">
 	<link href="<?php echo base_url('assets/css/ninja-slider.css') ?>" rel="stylesheet">
 	<link href="<?php echo base_url('https://fonts.googleapis.com/css?family=Roboto') ?>" rel="stylesheet">
-
+	<script src='https://www.google.com/recaptcha/api.js'></script>
 	<script src="<?php echo base_url('assets/js/jque.js') ?> "></script>
 	<script src="<?php echo base_url('assets/js/bootstrap.min.js') ?>"></script>
 	<link href="<?php echo base_url('assets/fontawesome/css/font-awesome.min.css') ?>" rel="stylesheet">
-	<script src="<?php echo base_url('https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js') ?>"></script>
-	<script src="<?php echo base_url('https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js') ?>"></script>
+	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 	<style type="text/css">
-		img#zoom {
-		    width: 350px;
-		    height: 200px;
-		    -webkit-transition: all .2s ease-in-out;
-		    -moz-transition: all .2s ease-in-out;
-		    -o-transition: all .2s ease-in-out;
-		    -ms-transition: all .2s ease-in-out;
-		}
-		.transisi {
-		    -webkit-transform: scale(1.8);
-		    -moz-transform: scale(1.8);
-		    -o-transform: scale(1.8);
-		    transform: scale(1.8);
-		}
-	</style>
+	img#zoom {
+		width: 350px;
+		height: 200px;
+		-webkit-transition: all .2s ease-in-out;
+		-moz-transition: all .2s ease-in-out;
+		-o-transition: all .2s ease-in-out;
+		-ms-transition: all .2s ease-in-out;
+	}
+	.transisi {
+		-webkit-transform: scale(1.8);
+		-moz-transform: scale(1.8);
+		-o-transform: scale(1.8);
+		transform: scale(1.8);
+	}
+</style>
 </head>
 <body>
 	<div id="header">
+
 		<div class="container">
 			<div id="logo-bks">
 				<img id="img-logo" src="<?php echo base_url(); ?>assets/images/logo.png">
@@ -57,9 +58,10 @@
 						</ul>
 					</div>
 				</nav>
+				
 
 				<h1 id="head-text">
-					BATIK <br> BERKUALTAS
+					RAJUTAN <br> BERKUALTAS
 				</h1>
 				<p style="color: #fff">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 				<a href="index.html#about"><button id="rm-head">READ MORE</button></a>
@@ -70,22 +72,30 @@
 				<div class="col-sm-4">
 					<div class="img-about">
 						<img src="<?php echo base_url(); ?>assets/images/cms_1.8.png">
-						<h4 class="sub-jdl-about">GRATIS ONGKIR SE INDONESIA</h4>
-						<p class="p-about">Etiam dapibus, arcu eget efficitur ultricies, nisi urna bibendum felis, laoreet posuere justo risus vel sem.</p>
+						<?php foreach ($ongkir as $u) : ?>
+							<h4 class="sub-jdl-about"><?php echo $u['judul']; ?></h4>
+							<p class="p-about"><?php echo $u['deskripsi']; ?></p>
+						<?php endforeach; ?>
 					</div>
 				</div>
 				<div class="col-sm-4">
 					<div class="img-about">
 						<img src="<?php echo base_url(); ?>assets/images/cms_1.9.png">
-						<h4 class="sub-jdl-about">GARANSI UANG KEMBALI</h4>
-						<p class="p-about">Etiam dapibus, arcu eget efficitur ultricies, nisi urna bibendum felis, laoreet posuere justo risus vel sem.</p>
+						
+						<?php foreach ($garansi as $u) : ?>
+							<h4 class="sub-jdl-about"><?php echo $u['judul']; ?></h4>
+							<p class="p-about"><?php echo $u['deskripsi']; ?></p>
+						<?php endforeach; ?>
+
 					</div>
 				</div>
 				<div class="col-sm-4">
 					<div class="img-about">
 						<img src="<?php echo base_url(); ?>assets/images/cms_1.10.png">
-						<h4 class="sub-jdl-about">ONLINE SUPPORT 24 JAM </h4>
-						<p class="p-about">Etiam dapibus, arcu eget efficitur ultricies, nisi urna bibendum felis, laoreet posuere justo risus vel sem.</p>
+						<?php foreach ($online as $u) : ?>
+							<h4 class="sub-jdl-about"><?php echo $u['judul']; ?></h4>
+							<p class="p-about"><?php echo $u['deskripsi']; ?></p>
+						<?php endforeach; ?>
 					</div>
 				</div>
 			</div>
@@ -93,7 +103,12 @@
 				<h2 class="jdl-segment">Featured Products</h2>
 				<p class="p-about">Etiam dapibus, arcu eget efficitur ultricies, nisi urna bibendum felis, laoreet posuere justo risus vel sem.estibulum sit amet eleifend nulla. </p>
 				<div id="wrap-product">
-
+						<div align="center" style="margin-bottom:50px">
+				<button class="filter-button" data-filter="all">All</button>
+				<button class="filter-button" data-filter="category1">Designing</button>
+				<button class="filter-button" data-filter="category2">Development</button>
+				<button class="filter-button" data-filter="category3">Graphics</button>
+			</div>
 					<div class="col-sm-12" id="produk">
 
 
@@ -117,30 +132,33 @@
 				<div class="col-sm-9">
 					<?php echo validation_errors(); ?>
 
-					<?php echo form_open(base_url('batik/create'));?>
+					<?php echo form_open(base_url('batik/create'));  $site_key = '6LfbrFsUAAAAAGPzDoAIvGtHocBli24SUm1dvgXG'; // Diisi dengan site_key API Google reCapthca yang sobat miliki?>
 
 
-						<div id="form-wrap" class="col-sm-12" style="margin-bottom: 40px">
-							<div class="col-sm-4">
-								<input type="text" name="nama" class="form-text" placeholder="Name">
-							</div>
-							<div class="col-sm-4">
-								<input type="email" name="email" class="form-text" placeholder="Email">
-							</div>
-							<div class="col-sm-4">
-								<input type="text" name="subject" class="form-text" placeholder="Subject">
-							</div>
+					<div id="form-wrap" class="col-sm-12" style="margin-bottom: 40px">
+						<div class="col-sm-4">
+							<input type="text" name="nama" class="form-text" placeholder="Name" required>
 						</div>
-						<div class="col-sm-12" style="margin-bottom: 40px">
-							<div class="col-sm-12">
-								<textarea id="textarea-form" placeholder="Text" name="text"></textarea>
-							</div>
+						<div class="col-sm-4">
+							<input type="email" name="email" class="form-text" placeholder="Email">
 						</div>
-						<div class="col-sm-12" >
-							<div class="col-sm-12" id="btn-wrap">
-								<button type="submit" id="kirim"><span style="margin-right: 5px;color: #0CB594" class="glyphicon glyphicon-envelope"></span>Send Message</button>
-							</div>
+						<div class="col-sm-4">
+							<input type="text" name="subject" class="form-text" placeholder="Subject">
 						</div>
+					</div>
+					<div class="col-sm-12" style="margin-bottom: 40px">
+						<div class="col-sm-12">
+							<textarea id="textarea-form" placeholder="Text" name="text"></textarea>
+						</div>
+					</div>
+					<div class="col-sm-12" style="margin-bottom: 40px;padding-left: 30px">
+						<div class="g-recaptcha" data-sitekey="<?php echo $site_key; ?>"></div>
+					</div>
+					<div class="col-sm-12" >
+						<div class="col-sm-12" id="btn-wrap">
+							<button type="submit" id="kirim"><span style="margin-right: 5px;color: #0CB594" class="glyphicon glyphicon-envelope"></span>Send Message</button>
+						</div>
+					</div>
 					<?php echo form_close(); ?>
 				</div>
 				<div class="col-sm-3" id="alamat">
@@ -165,7 +183,7 @@
 				<div class="col-sm-12" id="copy">
 					<div class="col-sm-6 col-xs-12">
 						<div id="copy-right" class="col-sm-12">
-							<h4 style="color:#fff;font-family: sans-serif;">2018 &copy Batik. All Rights Reserved</h4>
+							<h4 style="color:#fff;font-family: sans-serif;">2018 &copy Rajut. All Rights Reserved</h4>
 						</div>
 
 					</div>
@@ -193,11 +211,11 @@
 					method:"GET",
 					dataType:"json",
 					success:function(data) {
-				   		$('#produk').html(data.data_produk);
-				   		$('#pagination_link').html(data.pagination_link);
-			   		}
-			  	});
-			 }
+						$('#produk').html(data.data_produk);
+						$('#pagination_link').html(data.pagination_link);
+					}
+				});
+			}
 
 			load_country_data(0);
 			$(document).ready(function(){
@@ -210,22 +228,57 @@
 				});
 			});
 			//image slide
-	        function lightbox(idx) {
-	            var ninjaSldr = document.getElementById("ninja-slider");
-	            ninjaSldr.style.display = "block";
+			function lightbox(idx) {
+				var ninjaSldr = document.getElementById("ninja-slider");
+				ninjaSldr.style.display = "block";
 
-	            nslider.init(idx);
-	            var fsBtn = document.getElementById("fsBtn");
-	            fsBtn.click();
-	        }
+				nslider.init(idx);
+				var fsBtn = document.getElementById("fsBtn");
+				fsBtn.click();
+			}
 
 	        function fsIconClick(isFullscreen, ninjaSldr) { //fsIconClick is the default event handler of the fullscreen button
-	            if (isFullscreen) {
-	                ninjaSldr.style.display = "none";
+	        	if (isFullscreen) {
+	        		ninjaSldr.style.display = "none";
 
-	            }
+	        	}
 
 	        }
-			</script>
+	    </script>
+	     <script>
+
+	$(document).ready(function(){
+
+		$(".filter-button").click(function(){
+			var value = $(this).attr('data-filter');
+
+			if(value == "all")
+			{
+				$('.filter').show('1000');
+			}
+			else
+			{
+				$(".filter").not('.'+value).hide('3000');
+				$('.filter').filter('.'+value).show('3000');
+
+			}
+
+			if ($(".filter-button").removeClass("active")) {
+				$(this).removeClass("active");
+			}
+			$(this).addClass("active");
+		});
+	});
+	/*	end gallery */
+
+	$(document).ready(function(){
+		$(".fancybox").fancybox({
+			openEffect: "none",
+			closeEffect: "none"
+		});
+	});
+
+
+</script>
 	</body>
 	</html>

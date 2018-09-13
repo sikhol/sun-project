@@ -17,8 +17,9 @@
                             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
-
+                                        <th>No </th>
                                         <th>Nama </th>
+                                        <th>Tanggal Masuk</th>
                                         <th>Email</th>
                                         <th>Subject</th>
                                         <th>Text</th>
@@ -27,10 +28,11 @@
                                 </thead>
 
                                 <tbody>
-                                  <?php foreach ($depan as $u) :?>
+                                  <?php $i = 1; foreach ($depan as $u) :?>
                                     <tr class="odd gradeX">
-
+                                        <td><?= $i ?></td>
                                         <td><?= $u['nama']?></td>
+                                        <td><?= $u['tgl_masuk']?></td>
                                         <td class="center"><?= $u['email']?></td>
                                         <td><?= $u['subject']?></td>
                                         <td class="center"><?= $u['text']?></td>
@@ -40,7 +42,7 @@
                                               base_url('admin/delete1/'.$u['id']);?>">Hapus</a>
                                         </td>
                                     </tr>
-                                  <?php endforeach; ?>
+                                  <?php $i++; endforeach; ?>
 
                                 </tbody>
                             </table>

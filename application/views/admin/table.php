@@ -26,8 +26,9 @@
                             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
-
+                                        <th>No</th>
                                         <th>Nama Product</th>
+                                        <th>Tanggal Input</th>
                                         <th>Harga</th>
                                         <th>Gambar</th>
                                         <th>Deskripsi</th>
@@ -36,10 +37,11 @@
                                 </thead>
 
                                 <tbody>
-                                  <?php foreach ($batik as $u) :?>
+                                  <?php $i=1; foreach ($batik as $u) :?>
                                     <tr class="odd gradeX">
-
+                                        <td><?= $i ?></td>
                                         <td><?= $u['nama_product']?></td>
+                                        <td><?= $u['tgl_produk']?></td>
                                         <td class="center"><?= $u['harga']?></td>
                                         <td><?= $u['gambar']?></td>
                                         <td class="center"><?= $u['deskripsi']?></td>
@@ -50,7 +52,7 @@
                                               site_url('admin/delete/'.$u['id']);?>">Hapus</a>
                                         </td>
                                     </tr>
-                                  <?php endforeach; ?>
+                                  <?php $i++; endforeach; ?>
 
                                 </tbody>
                             </table>

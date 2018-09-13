@@ -12,7 +12,11 @@ class Batik extends CI_Controller {
 
 	public function index() {
     $this->batik_model->counter();
-    $this->load->view('frontend/batik');
+   $data['gambar']=$this->batik_model->get_batik('head');
+   $data['ongkir']=$this->batik_model->get_batik('ongkir');
+   $data['online']=$this->batik_model->get_batik('online');
+   $data['garansi']=$this->batik_model->get_batik('garansi');
+    $this->load->view('frontend/batik',$data);
 	}
 
   public function pagination($start=0) {
@@ -64,11 +68,31 @@ class Batik extends CI_Controller {
     if ($this->form_validation->run()=== FALSE) {
       $this->load->view('frontend/batik');
     }else {
-
+        $site_key = '6LfbrFsUAAAAAGPzDoAIvGtHocBli24SUm1dvgXG'; // Diisi dengan site_key API Google reCapthca yang sobat miliki
+    $secret_key = '6LfbrFsUAAAAAEmLNghLKERdXLr2dGhgxtkhTQl7'; // Diisi dengan secret_key API Google reCapthca yang sobat miliki
+  if(isset($_POST['g-recaptcha-response']))
+        {
+            $api_url = 'https://www.google.com/recaptcha/api/siteverify?secret=' . $secret_key . '&response='.$_POST['g-recaptcha-response'];
+            $response = @file_get_contents($api_url);
+            $data = json_decode($response, true);
+ 
+            if($data['success'])
+            {
+               $this->batik_model->set_batik();
+      redirect('batik');
+            }
+            else
+            {
+                $success = false;
+            }
+        }
+        else
+        {
+            $success = false;
+        }
 
       // $dat = array('upload_data' => $this->upload->data());
-      $this->batik_model->set_batik();
-      redirect('batik');
+      
 
     }
 
